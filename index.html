@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Class Splitter</title>
+    <h1>CLASS SPLITTER V1</h1>
+  </head>
+  <body>
+    <p>Enter in the  names of the class... </p>
+    <p>This program will place them in a random order.</p>
+    <p>You can copy the list of names from google classrooms, this will automatically remove line breaks.</p>
+    <form id = "nameIn" >
+    </form>
+    <textarea form ="nameIn" name="textAreaNames" rows="8" cols="80"></textarea>
+    <br>
+    <button name="submit" onclick="readNames()" >Submit</button>
+
+
+    <script>
+    function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+        }
+    }
+
+      function readNames(){
+        var x, names;
+        x = document.getElementById("nameIn");
+        names = x.elements['textAreaNames'].value;
+        arrNames = names.split("\n")
+
+        shuffle(arrNames)
+
+
+        document.write("Classlist: <br> ")
+        for (i = 0; i < arrNames.length; i++){
+          if (arrNames[i] === ""){
+            arrNames = arrNames.filter(String) //removes lbs
+          }
+          document.write((i+1) +" -- "+ arrNames[i]+"<br>");
+        }
+      }
+    </script>
+
+
+  </body>
+</html>
