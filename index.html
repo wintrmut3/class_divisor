@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
+<style media="screen">
+  head{
+    background-color: #333
+  }
+  body{
+    background-color: #333;
+    color: #ccc
+  }
+  h1{
+    background-color: #222;
+    text-align: center;
+    padding: 10px
+
+  }
+  *{
+    padding: 0px;
+    margin:0px;
+  }
+  p{
+    margin: 10px;
+    padding: 5px
+  }
+</style>
   <head>
     <meta charset="utf-8">
     <title>Class Splitter</title>
@@ -37,7 +60,7 @@
         shuffle(arrNames)
 
 
-        document.write("Classlist: <br> ")
+        document.write("Shuffled Classlist: <br> ")
         for (i = 0; i < arrNames.length; i++){
           if (arrNames[i] === ""){
             arrNames = arrNames.filter(String) //removes lbs
